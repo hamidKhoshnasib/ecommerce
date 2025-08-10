@@ -56,11 +56,9 @@ describe("ProductCard Component", () => {
       expect(screen.getByRole("option", { name: variant })).toBeInTheDocument();
     });
 
-    // مقدار اولیه وریانت انتخاب شده برابر اولین مورد است
     const select = screen.getByRole("combobox");
     expect(select.value).toBe(mockProductAvailable.variants[0]);
 
-    // تغییر مقدار وریانت
     fireEvent.change(select, { target: { value: mockProductAvailable.variants[1] } });
     expect(select.value).toBe(mockProductAvailable.variants[1]);
   });
